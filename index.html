@@ -3,78 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Push / Pull / Legs training log — 4-week block, 6 days a week.">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F4F5F4">
+<meta name="description" content="Push / Pull / Legs workout plan: 4-week block, 6 days a week.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0D13" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Lift With Intent">
-<title>Lift With Intent — Training Log</title>
+<meta name="apple-mobile-web-app-title" content="Workout Plan">
+<title>Workout Plan</title>
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
-    <p class="eyebrow">Month 2 · Push / Pull / Legs ×2</p>
-    <h1>Lift With Intent</h1>
+    <div class="topbar-text">
+      <p class="eyebrow">Month 2 · Push / Pull / Legs ×2</p>
+      <h1>Workout Plan</h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      <svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
   </header>
 
   <nav class="daynav" id="daynav" aria-label="Jump to a day"></nav>
 
-  <section>
-    <div class="callout">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <p><b>Left knee:</b> controlled tempo, moderate depth, stop on sharp pain — gentle loading helps rebuild strength. <b>Rod (lower left leg):</b> calf and shin-loading moves should start light; skip if you feel hardware irritation. Surgeon-cleared for weight training.</p>
-    </div>
-  </section>
+  <!--
+    Notes kept for next month's plan review (not shown in the UI):
 
-  <section>
-    <h2 class="sec-title">4-Week Progression</h2>
-    <table class="prog">
-      <thead><tr><th>Week</th><th>What changes</th></tr></thead>
-      <tbody>
-        <tr><td class="wk">W1<span>Foundation</span></td><td>Sets as written · top of rep range · RPE 7 · rest as listed (90–120s on hip thrust/presses/hack squat) · cardio 10–15 min ×3</td></tr>
-        <tr><td class="wk">W2<span>Build</span></td><td>Once every set hits the top of its range, add ~5% load and reset to the bottom · +1 set on main lifts · RPE 7–8 · cardio 15–20 min ×3</td></tr>
-        <tr><td class="wk">W3<span>Peak</span></td><td>Drop set on lateral raises &amp; leg extension · rest-pause on the last triceps move · heavier compounds · RPE 8–9 · hardest HIIT</td></tr>
-        <tr><td class="wk">W4<span>Deload</span></td><td>~2 sets · 60–70% load · RPE 5–6 · light cardio. Lets your leg and nervous system rebound.</td></tr>
-      </tbody>
-    </table>
-  </section>
+    Injury considerations:
+    - Left knee: controlled tempo, moderate depth, stop on sharp pain; gentle loading
+      helps rebuild strength.
+    - Rod (lower left leg): calf and shin-loading moves should start light; skip if you
+      feel hardware irritation. Surgeon-cleared for weight training.
 
-  <section>
-    <h2 class="sec-title">Before Every Session</h2>
-    <div class="tips">
-      <div class="tip"><h4>Warm-up</h4><p>5–8 min: incline walk, leg swings, hip circles, glute bridges, one light set.</p></div>
-      <div class="tip"><h4>Tempo</h4><p>~2 sec down, 1 sec up. Squeeze hard at the top.</p></div>
-      <div class="tip"><h4>Progress</h4><p>Add weight or reps weekly with good form. Log it.</p></div>
-      <div class="tip"><h4>Cool-down</h4><p>5 min: stretch what you trained, plus calf/hip-flexor.</p></div>
-    </div>
-  </section>
+    4-Week Progression:
+    - W1 (Foundation): Sets as written · top of rep range · RPE 7 · rest as listed
+      (90–120s on hip thrust/presses/hack squat) · cardio 10–15 min ×3
+    - W2 (Build): Once every set hits the top of its range, add ~5% load and reset to the
+      bottom · +1 set on main lifts · RPE 7–8 · cardio 15–20 min ×3
+    - W3 (Peak): Drop set on lateral raises & leg extension · rest-pause on the last
+      triceps move · heavier compounds · RPE 8–9 · hardest HIIT
+    - W4 (Deload): ~2 sets · 60–70% load · RPE 5–6 · light cardio. Lets your leg and
+      nervous system rebound.
+  -->
 
   <section>
     <h2 class="sec-title">The Week</h2>
     <div id="days"></div>
-  </section>
-
-  <section>
-    <h2 class="sec-title">Cardio</h2>
-    <div class="cardio">
-      <div class="cblock">
-        <h4>Steady-state</h4>
-        <p>Incline fast walk, bike, or elliptical — 10–20 min after Days 1 &amp; 2, optional 10 min after Days 4/5. Pace: could talk, wouldn't want to sing.</p>
-      </div>
-      <div class="cblock">
-        <h4>HIIT — Day 6</h4>
-        <p>~12 min: 30s hard / 30s easy on bike, elliptical, or kettlebell swings — or 45s/45s incline-walk surges. Start at 5 rounds, build to 7–8.</p>
-        <p>No jump squats, burpees, box jumps, or running.</p>
-      </div>
-    </div>
   </section>
 
   <footer>4-week block · reassess after Week 4</footer>

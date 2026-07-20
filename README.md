@@ -1,6 +1,8 @@
-# Lift With Intent — Training Log
+# Workout Plan
 
-A single-page, static training log (Push / Pull / Legs ×2, 4-week block). No backend, no build step, no external dependencies — everything needed is in this folder.
+A single-page, static workout plan (Push / Pull / Legs ×2, 4-week block). No backend, no build step, no external dependencies — everything needed is in this folder.
+
+**Live site:** [workout-plan-five-silk.vercel.app](https://workout-plan-five-silk.vercel.app)
 
 ## Project structure
 
@@ -17,32 +19,27 @@ A single-page, static training log (Push / Pull / Legs ×2, 4-week block). No ba
 │   ├── apple-touch-icon.png Home-screen icon (iOS)
 │   ├── icon-192.png         Home-screen icon (Android/PWA)
 │   └── icon-512.png         Home-screen icon (Android/PWA)
-├── manifest.webmanifest     Lets phones "Add to Home Screen" with a proper icon/name
-└── .nojekyll                Tells GitHub Pages to serve files as-is, skipping Jekyll
+└── manifest.webmanifest     Lets phones "Add to Home Screen" with a proper icon/name
 ```
 
 Everything is plain HTML/CSS/JS — no npm, no build tools, no frameworks. Open `index.html` directly in a browser and it works exactly as it will once deployed.
 
-## Deploy to GitHub Pages
+## Deployment
 
-1. Create a new GitHub repository (public, or private on a paid plan) and push everything in this folder to it, e.g.:
-   ```
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-2. On GitHub, go to **Settings → Pages**.
-3. Under **Source**, choose **Deploy from a branch**.
-4. Select branch **main**, folder **/ (root)**, then **Save**.
-5. Wait ~1 minute. Your page will be live at:
-   ```
-   https://<your-username>.github.io/<repo-name>/
-   ```
+The site is deployed on [Vercel](https://vercel.com) and is live at:
 
-No further configuration is needed — there's no build step, and every asset is referenced with a relative path (`css/style.css`, `js/app.js`, `assets/...`), so the site works correctly whether it's hosted at the root of a domain or in a subpath like `/repo-name/`.
+```
+https://workout-plan-five-silk.vercel.app
+```
+
+Because it's a static site with no build step, Vercel serves the files as-is. To deploy your own copy:
+
+1. Push this folder to a GitHub repository.
+2. In Vercel, click **Add New → Project** and import the repository.
+3. Leave the framework preset as **Other** — there's no build command and the output directory is the project root.
+4. Click **Deploy**. Every push to the connected branch redeploys automatically.
+
+Every asset is referenced with a relative path (`css/style.css`, `js/app.js`, `assets/...`), so the site works correctly whether it's hosted at the root of a domain or in a subpath.
 
 ## Editing your plan
 

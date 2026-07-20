@@ -69,7 +69,7 @@ days.forEach(d => {
 const rest = document.createElement("div");
 rest.className = "rest";
 rest.id = "rest";
-rest.innerHTML = `<span class="idx">7</span><div><b>Rest — Sunday</b><span>Full rest, or a relaxed walk / yoga / mobility.</span></div>`;
+rest.innerHTML = `<span class="idx">7</span><div><b>Rest: Sunday</b><span>Full rest, or a relaxed walk / yoga / mobility.</span></div>`;
 host.appendChild(rest);
 
 const nav = document.getElementById("daynav");
@@ -77,7 +77,7 @@ days.forEach(d => {
   const a = document.createElement("a");
   a.className = d.kind + (d.id === todayDay ? " now" : "");
   a.href = "#day-" + d.id;
-  const short = d.focus.split(" —")[0];
+  const short = d.focus.split(":")[0].trim();
   a.innerHTML = `<span class="dot"></span>${d.id} ${esc(short)}`;
   a.addEventListener("click", e => {
     e.preventDefault();
@@ -102,3 +102,13 @@ addEventListener("scroll", () => {
   toTop.classList.toggle("show", window.scrollY > 420);
 }, {passive:true});
 toTop.addEventListener("click", () => window.scrollTo({top:0, behavior}));
+
+const themeToggle = document.getElementById("themeToggle");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = () =>
+  document.documentElement.dataset.theme || (prefersDark.matches ? "dark" : "light");
+themeToggle.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch (e) {}
+});

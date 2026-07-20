@@ -1,7 +1,7 @@
 {
-  "name": "Lift With Intent",
-  "short_name": "Lift",
-  "description": "Push / Pull / Legs training log",
+  "name": "Workout Plan",
+  "short_name": "Workout",
+  "description": "Push / Pull / Legs workout plan",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
